@@ -886,6 +886,12 @@ http://www.templatemo.com/tm-509-hydro
     margin-top: 20px;
   }
 
+  .back-text{
+    display: none;
+  }
+  .change-text{
+    display: block;
+  }
 
   /*---------------------------------------
      RESPONSIVE STYLES              
@@ -958,6 +964,12 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   @media only screen and (min-width: 640px) and (max-width: 767px) {
+    .back-text{
+      display: block;
+    }
+    .change-text{
+      display: none;
+    }
 
     #blog-header {
       height: 100vh;
