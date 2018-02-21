@@ -987,6 +987,12 @@ http://www.templatemo.com/tm-509-hydro
 
   @media screen and (max-width: 767px) {
 
+    .back-text{
+      display: block;
+    }
+    .change-text{
+      display: none;
+    }
     .custom-navbar {
       background: #ffffff;
       -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -1054,6 +1060,12 @@ http://www.templatemo.com/tm-509-hydro
 
   @media screen and (max-width: 639px) {
 
+    .back-text{
+      display: block;
+    }
+    .change-text{
+      display: none;
+    }
     h1 {
       font-size: 2em;
     }
