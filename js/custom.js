@@ -27,7 +27,6 @@
       horizontalScrolling: false,
     }); 
 
-
     // MAGNIFIC POPUP
     $('.image-popup').magnificPopup({
         type: 'image',

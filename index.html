@@ -117,10 +117,10 @@ http://www.templatemo.com/tm-509-hydro
                         </div>
                         <p>No desenvolvimento de sistemas web, conto com meus conhecimentos e habilidades, envolvendo tecnologias
                             e metodologias que estão em alta no mercado.</p>
-                        <p class="change-text">Ao lado, aponto algumas tecnologias e meus níveis de afinidades com elas. Minha experiência
-                            e algumas referências, comprovam minhas qualificações.</p>
-                        <p class="back-text">Abaixo, aponto algumas tecnologias e meus níveis de afinidades com elas. Minha experiência
-                            e algumas referências, comprovam minhas qualificações.</p>
+                        <p class="change-text">Ao lado, aponto algumas tecnologias e meus níveis de afinidades com elas. Minha experiência e algumas
+                            referências, comprovam minhas qualificações.</p>
+                        <p class="back-text">Abaixo, aponto algumas tecnologias e meus níveis de afinidades com elas. Minha experiência e algumas
+                            referências, comprovam minhas qualificações.</p>
                     </div>
                 </div>
 
@@ -158,39 +158,39 @@ http://www.templatemo.com/tm-509-hydro
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                        <h3>Mobile - Multiplatform</h3>
-                        <div class="about-info skill-thumb">
-                            <strong>Ionic / Cordova</strong>
-                            <span class="pull-right">85%</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 85%;"></div>
-                            </div>
-                            
-                            <strong>PhoneGap / Cordova</strong>
-                            <span class="pull-right">60%</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 60%;"></div>
-                            </div>
-
-                            <strong>React-Native</strong>
-                            <span class="pull-right">45%</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 45%;"></div>
-                            </div>
-    
-                            <strong>NativeScript</strong>
-                            <span class="pull-right">35%</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 35%;"></div>
-                            </div>
-    
-                           
+                    <h3>Mobile - Multiplatform</h3>
+                    <div class="about-info skill-thumb">
+                        <strong>Ionic / Cordova</strong>
+                        <span class="pull-right">85%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 85%;"></div>
                         </div>
+
+                        <strong>PhoneGap / Cordova</strong>
+                        <span class="pull-right">60%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 60%;"></div>
+                        </div>
+
+                        <strong>React-Native</strong>
+                        <span class="pull-right">45%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 45%;"></div>
+                        </div>
+
+                        <strong>NativeScript</strong>
+                        <span class="pull-right">35%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 35%;"></div>
+                        </div>
+
+
                     </div>
+                </div>
 
             </div>
         </div>
@@ -287,7 +287,7 @@ http://www.templatemo.com/tm-509-hydro
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <input type="submit" class="form-control" name="submit" value="Enviar mensagem!">
+                            <input type="submit" class="form-control" name="submit" value="Enviar mensagem!" id="send">
                         </div>
 
                     </form>
@@ -387,6 +387,29 @@ http://www.templatemo.com/tm-509-hydro
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+
+        $('#send').on('click', function () {
+            var obj = {};
+            obj.from = $('#cf-name').val();
+            obj.subject = $('#cf-email').val();
+            obj.message = $('#cf-message').val();
+
+            if(obj.from != "" && obj.message != ""){
+                $.ajax({
+                    method: "post",
+                    url: "https://limitless-anchorage-11992.herokuapp.com/api/send_email",
+                    data: obj,
+                    success: function(res){
+                        console.log(res);
+                    }
+                });
+            } else{
+                alert("Preencha todos os campos para enviar o email.");
+            }
+
+        });
+    </script>
 
 </body>
 
