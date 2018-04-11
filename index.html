@@ -402,6 +402,17 @@ http://www.templatemo.com/tm-509-hydro
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
     <script>
+        $(document).ready(function(){
+            $.ajax({
+                method: 'get',
+                url: 'https://limitless-anchorage-11992.herokuapp.com/api'
+            }).then(function(res){
+                console.log("Subiu o back", res)
+            }, function(err){
+                console.log("não subiu o back", err);
+            });
+        });
+
 
         $('#send').on('click', function () {
             var obj = {};
